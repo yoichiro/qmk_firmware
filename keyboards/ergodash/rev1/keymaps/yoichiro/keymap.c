@@ -15,49 +15,51 @@ enum custom_keycodes {
 };
 
 #define EISU LALT(KC_GRV)
-#define C_TAB LCTL_T(KC_TAB)
+#define LC_TAB LCTL_T(KC_TAB)
+#define LA_BS LALT_T(KC_BSPC)
+#define RG_BS RGUI_T(KC_BSPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT( \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                      KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, \
+   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_HOME,                   KC_PGUP, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
+   KC_GESC, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    XXXXXXX,                   XXXXXXX, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   C_TAB,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_END,                    KC_PGDN, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+   LC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    XXXXXXX,                   XXXXXXX, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_SPC,                    KC_ENT,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_UP,   RSFT_T(KC_SLSH), \
+   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX,                   XXXXXXX, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
-   ADJUST,  KC_LGUI, KC_LALT,          KC_HENK, LOWER,   KC_SPC,  KC_SPC,  KC_ENT,  KC_ENT,  RAISE,   KC_HENK,          KC_LEFT, KC_DOWN, KC_RGHT  \
+   XXXXXXX, XXXXXXX, XXXXXXX,          LA_BS,   LOWER,   KC_SPC,  XXXXXXX, XXXXXXX, KC_ENT,  RAISE,   RG_BS,            XXXXXXX, XXXXXXX, XXXXXXX  \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
   ),
 
   [_LOWER] = LAYOUT(
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  \
+   _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                      KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_DEL, \
+   KC_BSLS, KC_CIRC, KC_EXLM, KC_AMPR, KC_PIPE, KC_DLR,  _______,                   _______, KC_AT,   KC_EQL,  KC_PLUS, KC_ASTR, KC_PERC, _______, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC,                   KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS, KC_PLUS, KC_DQT, \
+   _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______,                   _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_PSCR, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_LSFT, KC_Z,    KC_X,    KC_PIPE, KC_LBRC, KC_RBRC, KC_PSCR,                   KC_PSCR, KC_LCBR, KC_RCBR, KC_LT,   KC_GT,   KC_PGUP, KC_QUES, \
+   _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
-   KC_CAPS, KC_LGUI, KC_LALT,          KC_MHEN, LOWER,   KC_SPC,  KC_SPC,  KC_ENT,  KC_ENT,  RAISE,   KC_MHEN,          KC_HOME, KC_PGDN, KC_END   \
+   _______, _______, _______,          _______, LOWER,   _______, _______, _______, KC_DEL,  RAISE,   _______,          _______, _______, _______  \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
   ),
 
   [_RAISE] = LAYOUT(
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  \
+   _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                      KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_DEL, \
+   KC_BSLS, KC_CIRC, KC_EXLM, KC_AMPR, KC_PIPE, KC_DLR,  _______,                   _______, KC_AT,   KC_EQL,  KC_PLUS, KC_ASTR, KC_PERC, _______, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC,                   KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS, KC_PLUS, KC_DQT, \
+   KC_HASH, KC_GRV,  KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, _______,                   _______, KC_PGUP, KC_HOME, KC_UP,   KC_END, _______, _______, \
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
-   KC_LSFT, KC_Z,    KC_X,    KC_PIPE, KC_LBRC, KC_RBRC, KC_PSCR,                   KC_PSCR, KC_LCBR, KC_RCBR, KC_LT,   KC_GT,   KC_PGUP, KC_QUES, \
+   _______, KC_TILD, _______, _______, KC_LCBR, KC_RCBR,  _______,                   _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  _______, _______, \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
-   KC_CAPS, KC_LGUI, KC_LALT,          KC_MHEN, LOWER,   KC_SPC,  KC_SPC,  KC_ENT,  KC_ENT,  RAISE,   KC_MHEN,          KC_HOME, KC_PGDN, KC_END   \
+   _______, _______, _______,          _______, LOWER,   KC_BSPC, _______, _______, _______, RAISE,   _______,          _______, _______, _______  \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
   ),
 
