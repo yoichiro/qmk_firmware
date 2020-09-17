@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
-/* #include "keymap_jp.h" */
+#include "raw_hid.h"
+#include "rgblight.h"
 
 
 #define _QWERTY 0
@@ -128,4 +129,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
   return true;
+}
+
+void raw_hid_receive(uint8_t *data, uint8_t length) {
+  uint8_t operation = data[0];
+  uint8_t option = data[1];
+  if (operation == 'r') {
+    if (option == 't') {
+      rgblight_enable();
+    } else if (option == 'f') {
+      rgblight_disable();
+    } else if (option == 'c') {
+      rgblight_mode(RGBLIGHT_MODE_CHRISTMAS);
+    }
+  }
 }
