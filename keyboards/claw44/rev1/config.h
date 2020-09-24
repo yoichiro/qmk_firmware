@@ -57,6 +57,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLED_NUM 12    // Number of LEDs
 */
 
+/* WS2812B RGB LED */
+#define RGB_DI_PIN D3
+#define RGBLIGHT_ANIMATIONS
+#define RGBLED_NUM 12
+#define RGBLIGHT_SPLIT
+#define RGBLED_SPLIT { 6, 6 }    // Number of LEDs
+
+// The LEDs on the slave half go in reverse order
+#define RGBLIGHT_LED_MAP { 0,  1,  2,  3,  4,  5, \
+                          11, 10,  9,  8,  7,  6 }
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
