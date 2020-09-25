@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 200
 
 // OLED Configuration
-#define OLED_TIMEOUT 6000
+//#define OLED_TIMEOUT 6000
 
 /* WS2812B RGB LED */
 #define RGB_DI_PIN D3
