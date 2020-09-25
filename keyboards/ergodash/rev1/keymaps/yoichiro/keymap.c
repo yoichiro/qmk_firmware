@@ -16,8 +16,8 @@ enum custom_keycodes {
 };
 
 #define LC_TAB LCTL_T(KC_TAB)
-#define LA_MHEN LALT_T(KC_MHEN)
-#define RG_HENK RGUI_T(KC_HENK)
+#define LA_MHEN LALT_T(KC_LANG2)
+#define RG_HENK RGUI_T(KC_LANG1)
 #define RS_MINS RSFT_T(KC_MINS)
 #define VOLUP KC__VOLUP
 #define VOLDOWN KC__VOLDOWN
@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //+--------+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+--------+
    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX,                   XXXXXXX, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RS_MINS, \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
-   XXXXXXX, XXXXXXX, XXXXXXX,          LA_MHEN, LOWER,   KC_SPC,  XXXXXXX, XXXXXXX, KC_ENT,  RAISE,   RG_HENK,          XXXXXXX, XXXXXXX, XXXXXXX  \
+   XXXXXXX, XXXXXXX, KC_LCMD,          LA_MHEN, LOWER,   KC_SPC,  XXXXXXX, XXXXXXX, KC_ENT,  RAISE,   RG_HENK,          XXXXXXX, XXXXXXX, XXXXXXX  \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
   ),
 
