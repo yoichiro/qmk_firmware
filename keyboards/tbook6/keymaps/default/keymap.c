@@ -14,6 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
+#include "lufa.h"
+#include "ssd1306.h"
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
@@ -54,3 +56,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+
+#ifdef OLED_DRIVER_ENABLE
+void oled_task_user(void) {
+    oled_write_P(PSTR("Hi, Yoichiro!"), false);
+}
+#endif
