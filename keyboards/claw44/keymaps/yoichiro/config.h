@@ -30,12 +30,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // #define SSD1306OLED
 
-#define USE_SERIAL_PD2
+// #define USE_SERIAL_PD2
 
-#define TAPPING_TERM 200
-
-// OLED Configuration
-//#define OLED_TIMEOUT 6000
+// #define TAPPING_TERM 200
 
 /* WS2812B RGB LED */
 #define RGB_DI_PIN D3
