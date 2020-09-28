@@ -27,8 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT      tbook6
 
 /* key matrix size */
-#define MATRIX_ROWS 1
-#define MATRIX_COLS 3
+#define MATRIX_ROWS 2
+#define MATRIX_COLS 2
 
 /*
  * Keyboard Matrix Assignments
@@ -40,8 +40,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS { }
-#define MATRIX_COL_PINS { F6, B1, B2 }
+#define MATRIX_ROW_PINS { B2, B6 }
+#define MATRIX_COL_PINS { B4, B5 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
