@@ -40,7 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS { B2, B6 }
+#define MATRIX_ROW_PINS { B3, B2 }
 #define MATRIX_COL_PINS { B4, B5 }
 #define UNUSED_PINS
 
@@ -52,9 +52,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #define SOFT_SERIAL_PIN D0  // or D1, D2, D3, E6
 
-//#define BACKLIGHT_PIN B7
-//#define BACKLIGHT_LEVELS 3
-//#define BACKLIGHT_BREATHING
+#ifdef BACKLIGHT_ENABLE
+  #define BACKLIGHT_PIN B6
+  #define BACKLIGHT_LEVELS 7
+  #define BACKLIGHT_BREATHING
+  #define BREATHING_PERIOD 4
+#endif
 
 #define RGB_DI_PIN D3
 #ifdef RGB_DI_PIN
