@@ -20,19 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-//#define USE_MATRIX_I2C
-
-/* Select hand configuration */
-
 #define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
 
-// #define SSD1306OLED
-
-// #define USE_SERIAL_PD2
-
-// #define TAPPING_TERM 200
+#define OLED_FONT_H "keyboards/claw44/lib/glcdfont.c"
 
 /* WS2812B RGB LED */
 #define RGB_DI_PIN D3

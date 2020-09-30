@@ -1,21 +1,6 @@
 #pragma once
 
-#include "../claw44.h"
-
 #include "quantum.h"
-
-#ifdef RGBLIGHT_ENABLE
-//rgb led driver
-#include "ws2812.h"
-#endif
-
-#ifdef USE_I2C
-#include <stddef.h>
-#ifdef __AVR__
-	#include <avr/io.h>
-	#include <avr/interrupt.h>
-#endif
-#endif
 
 #define LAYOUT( \
   L00, L01, L02, L03, L04, L05,           R00, R01, R02, R03, R04, R05, \
@@ -46,10 +31,3 @@
     KC_##L20, KC_##L21, KC_##L22, KC_##L23, KC_##L24, KC_##L25,                     KC_##R20, KC_##R21, KC_##R22, KC_##R23, KC_##R24, KC_##R25, \
                                   KC_##L30, KC_##L31, KC_##L32, KC_##L33, KC_##R30, KC_##R31, KC_##R32, KC_##R33 \
   )
-
-enum layer_number {
-  _QWERTY = 0,
-  _LOWER,
-  _RAISE,
-  _ADJUST,
-};
