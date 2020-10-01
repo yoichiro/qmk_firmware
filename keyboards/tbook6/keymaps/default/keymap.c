@@ -14,8 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "lufa.h"
-#include "ssd1306.h"
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
@@ -31,8 +29,8 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
-        BL_TOGG, BL_BRTG, \
-        BL_INC, BL_DEC \
+        KC_1, KC_2, KC_3, KC_4, \
+        KC_A, KC_B, KC_C, KC_D \
     )
 };
 
