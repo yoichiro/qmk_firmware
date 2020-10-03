@@ -29,12 +29,18 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
-        KC_1, KC_2, KC_3, KC_4, \
+        RGB_TOG, AU_TOG, KC_3, KC_4, \
         KC_A, KC_B, KC_C, KC_D \
     )
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef AUDIO_ENABLE
+    if (record->event.pressed) {
+      float my_song[][2] = SONG(QWERTY_SOUND);
+      PLAY_SONG(my_song);
+    }
+#endif
     switch (keycode) {
         case QMKBEST:
             if (record->event.pressed) {
