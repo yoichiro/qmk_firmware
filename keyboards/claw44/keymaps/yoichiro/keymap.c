@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT( \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
-   KC_BSLS, KC_CIRC, KC_EXLM, KC_AMPR, KC_PIPE, KC_DLR,                    KC_AT,   KC_ASTR, KC_PLUS, KC_EQL,  KC_PERC, KC_DEL,  \
+   KC_BSLS, KC_CIRC, KC_EXLM, KC_AMPR, KC_PIPE, KC_DLR,                    KC_AT,   KC_ASTR, KC_PLUS, KC_EQL,  KC_PERC, KC_BSPC, \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
    _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DQT,  \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT( \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
-   KC_BSLS, KC_CIRC, KC_EXLM, KC_AMPR, KC_PIPE, KC_DLR,                    KC_AT,   KC_ASTR, KC_PLUS, KC_EQL,  KC_PERC, KC_DEL,  \
+   KC_BSLS, KC_CIRC, KC_EXLM, KC_AMPR, KC_PIPE, KC_DLR,                    KC_AT,   KC_ASTR, KC_PLUS, KC_EQL,  KC_PERC, KC_BSPC, \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
    KC_HASH, KC_GRV,  KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN,                   KC_PGUP, KC_HOME, KC_UP,   KC_END,  _______, _______, \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
