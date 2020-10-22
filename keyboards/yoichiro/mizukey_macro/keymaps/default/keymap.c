@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "song_list.h"
+//#include "song_list.h"
+//#include "musical_notes.h"
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
@@ -43,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //  if (record->event.pressed) {
-//    float my_song[][2] = SONG(GUITAR_SOUND);
+//    float my_song[][2] = SONG(E__NOTE(_E7), E__NOTE(_A6), ED_NOTE(_E6));
 //    PLAY_SONG(my_song);
 //  }
 //  switch (keycode) {

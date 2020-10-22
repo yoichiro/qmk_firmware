@@ -50,6 +50,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Audio support */
 #define C6_AUDIO
 
+#ifdef AUDIO_ENABLE
+  #define STARTUP_SONG SONG(E__NOTE(_C7), E__NOTE(_C6))
+#endif
+
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
  */
