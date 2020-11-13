@@ -21,8 +21,8 @@ enum custom_keycodes {
 };
 
 #define LC_TAB LCTL_T(KC_TAB)
-#define LA_MHEN LALT_T(KC_MHEN)
-#define RG_HENK RGUI_T(KC_HENK)
+#define LA_MHEN LGUI_T(KC_LANG2)
+#define RG_HENK RALT_T(KC_LANG1)
 #define RS_MINS RSFT_T(KC_MINS)
 #define VOLUP KC__VOLUP
 #define VOLDOWN KC__VOLDOWN
