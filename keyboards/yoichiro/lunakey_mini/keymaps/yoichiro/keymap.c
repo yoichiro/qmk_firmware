@@ -33,7 +33,6 @@ enum layer_number {
 
 #define LC_TAB LCTL_T(KC_TAB)
 #define RC_QUOT RCTL_T(KC_QUOT)
-#define RC_DQT RCTL_T(KC_DQT)
 #define RS_MINS RSFT_T(KC_MINS)
 #define VOLUP KC__VOLUP
 #define VOLDOWN KC__VOLDOWN
@@ -57,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
    KC_BSLS, KC_CIRC, KC_EXLM, KC_AMPR, KC_PIPE, KC_DLR,                    KC_AT,   KC_ASTR, KC_PLUS, KC_EQL,  KC_PERC, KC_BSPC, \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
-   _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    RC_DQT,  \
+   _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DQT,  \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
    _______, _______, _______, _______, _______, _______,                   _______, KC_COLN, KC_LT,   KC_GT,   KC_QUES, KC_UNDS, \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
@@ -69,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
    KC_BSLS, KC_CIRC, KC_EXLM, KC_AMPR, KC_PIPE, KC_DLR,                    KC_AT,   KC_ASTR, KC_PLUS, KC_EQL,  KC_PERC, KC_BSPC, \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
-   KC_HASH, KC_GRV,  KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN,                   KC_PGUP, KC_HOME, KC_UP,   KC_END,  _______, RC_DQT,  \
+   KC_HASH, KC_GRV,  KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN,                   KC_PGUP, KC_HOME, KC_UP,   KC_END,  _______, KC_DQT,  \
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
    _______, KC_TILD, _______, _______, KC_LCBR, KC_RCBR,                   KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, \
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+

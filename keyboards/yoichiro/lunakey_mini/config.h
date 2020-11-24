@@ -91,6 +91,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Audio Support */
 #define C6_AUDIO
 
+#ifdef AUDIO_ENABLE
+  #define STARTUP_SONG SONG(E__NOTE(_C7), E__NOTE(_C6))
+#endif
+
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
 
