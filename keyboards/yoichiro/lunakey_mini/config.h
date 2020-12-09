@@ -93,6 +93,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifdef AUDIO_ENABLE
   #define STARTUP_SONG SONG(E__NOTE(_C7), E__NOTE(_C6))
+//  #define AUDIO_CLICKY
 #endif
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
