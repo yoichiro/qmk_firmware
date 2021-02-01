@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT_split_3x6_4(
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
-   RESET,   _______, _______, _______, _______, _______,                   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
+   RESET,   CLICKY_TOGGLE, _______, _______, _______, _______,                   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
    RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, _______, _______,                   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
 //+--------+--------+--------+--------+--------+--------+                 +--------+--------+--------+--------+--------+--------+
@@ -75,6 +75,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+
   )
 };
+
+//#ifdef OLED_DRIVER_ENABLE
+//
+//void render_layer_state(void) {
+//    oled_write_P(PSTR("Layer: "), false);
+//    switch(get_highest_layer(layer_state)) {
+//        case _QWERTY:
+//            oled_write_P(PSTR("Default\n"), false);
+//            break;
+//        case _LOWER:
+//            oled_write_P(PSTR("Lower\n"), false);
+//            break;
+//        case _RAISE:
+//            oled_write_P(PSTR("Raise\n"), false);
+//            break;
+//        case _ADJUST:
+//            oled_write_P(PSTR("Adjust\n"), false);
+//            break;
+//    }
+//}
+//
+//void oled_task_user(void) {
+//    if (is_keyboard_master()) {
+//        render_layer_state();
+//    } else {
+//        oled_write_P(PSTR("Lunakey Mini\n"), false);
+//    }
+//}
+//
+//#endif
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
