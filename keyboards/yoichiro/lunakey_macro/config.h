@@ -50,8 +50,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Audio support */
 #define AUDIO_PIN C6
 
+#define AUDIO_INIT_DELAY
 #ifdef AUDIO_ENABLE
-  #define STARTUP_SONG SONG(E__NOTE(_C7), E__NOTE(_C6))
+  #define STARTUP_SONG SONG(E__NOTE(_C6), E__NOTE(_C7))
 #endif
 
 /* Mouse Keys Combined mode */

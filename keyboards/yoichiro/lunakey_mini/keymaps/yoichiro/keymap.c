@@ -80,6 +80,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
 
+#define AUDIO_INIT_DELAY
 #ifdef AUDIO_ENABLE
-  #define STARTUP_SONG SONG(E__NOTE(_C7), E__NOTE(_C6))
+  #define STARTUP_SONG SONG(E__NOTE(_C6), E__NOTE(_C7))
 #endif
