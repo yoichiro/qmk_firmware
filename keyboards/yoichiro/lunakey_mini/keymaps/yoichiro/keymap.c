@@ -80,7 +80,35 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
 
-#define AUDIO_INIT_DELAY
 #ifdef AUDIO_ENABLE
   #define STARTUP_SONG SONG(E__NOTE(_C7), E__NOTE(_C6))
 #endif
+
+//#ifdef OLED_ENABLE
+//void render_layer_state(void) {
+//  oled_write_P(PSTR("Layer: "), false);
+//  switch(get_highest_layer(layer_state)) {
+//    case _QWERTY:
+//      oled_write_P(PSTR("Default\n"), false);
+//      break;
+//    case _LOWER:
+//      oled_write_P(PSTR("Lower\n"), false);
+//      break;
+//    case _RAISE:
+//      oled_write_P(PSTR("Raise\n"), false);
+//      break;
+//    case _ADJUST:
+//      oled_write_P(PSTR("Adjust\n"), false);
+//      break;
+//  }
+//}
+//
+//bool oled_task_user(void) {
+//  if (is_keyboard_master()) {
+//    render_layer_state();
+//  } else {
+//    oled_write_P(PSTR("Lunakey Mini\n"), false);
+//  }
+//  return false;
+//}
+//#endif
