@@ -11,12 +11,23 @@
 #define SERIAL_USART_TX_PIN GP0
 #define SERIAL_USART_RX_PIN GP1
 
+#define USB_VBUS_PIN GP24
+
 //#define SERIAL_DEBUG
 
 #define WS2812_PIO_USE_PIO1
 
 #define RGBLIGHT_LED_MAP { 0, 1, 2, 3, 4, 5, \
                            11, 10, 9, 8, 7, 6 }
+
+/* Audio support */
+#ifdef AUDIO_ENABLE
+  #define AUDIO_PIN GP8
+  #define AUDIO_PWM_DRIVER PWMD4
+  #define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
+  #define AUDIO_INIT_DELAY
+  #define STARTUP_SONG SONG(M__NOTE(_C7, 30), M__NOTE(_C6, 30))
+#endif
 
 /* define if matrix has ghost (lacks anti-ghosting diodes) */
 //#define MATRIX_HAS_GHOST
