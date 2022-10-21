@@ -27,6 +27,8 @@
   #define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
   #define AUDIO_INIT_DELAY
   #define STARTUP_SONG SONG(M__NOTE(_C7, 30), M__NOTE(_C6, 30))
+  #define AUDIO_CLICKY
+  #define AUDIO_VOICES
 #endif
 
 /* define if matrix has ghost (lacks anti-ghosting diodes) */
