@@ -15,6 +15,18 @@
 
 #define WS2812_PIO_USE_PIO1
 
+/* Audio support */
+#ifdef AUDIO_ENABLE
+  #define AUDIO_PIN GP8
+  #define AUDIO_PWM_DRIVER PWMD4
+  #define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
+  #define AUDIO_INIT_DELAY
+  #define STARTUP_SONG SONG(M__NOTE(_C7, 30), M__NOTE(_C6, 30))
+#endif
+
+/* Tapping Term */
+#define TAPPING_TERM 130
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
