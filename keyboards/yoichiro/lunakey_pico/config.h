@@ -27,6 +27,9 @@
 /* Tapping Term */
 #define TAPPING_TERM 130
 
+/* Determine master or slave by detecting VBUS */
+#define USB_VBUS_PIN GP24
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
