@@ -119,6 +119,17 @@ def generate_config_items(kb_info_json, config_h_lines):
             config_h_lines.append(generate_define(config_key, config_value))
 
 
+def generate_audio_config(audio_json, config_h_lines):
+    """Generate the config.h lines for audio pins."""
+    pins = audio_json.get('pins', [])
+
+    if len(pins) > 0:
+        config_h_lines.append(generate_define('AUDIO_PIN', pins[0]))
+
+    if len(pins) > 1:
+        config_h_lines.append(generate_define('AUDIO_PIN_ALT', pins[1]))
+
+
 def generate_encoder_config(encoder_json, config_h_lines, postfix=''):
     """Generate the config.h lines for encoders."""
     a_pads = []
@@ -198,6 +209,9 @@ def generate_config_h(cli):
 
     if 'matrix_pins' in kb_info_json:
         config_h_lines.append(matrix_pins(kb_info_json['matrix_pins']))
+
+    if 'audio' in kb_info_json:
+        generate_audio_config(kb_info_json['audio'], config_h_lines)
 
     if 'encoder' in kb_info_json:
         generate_encoder_config(kb_info_json['encoder'], config_h_lines)
