@@ -57,6 +57,7 @@ GENERIC_FEATURES = \
     TAP_DANCE \
     TRI_LAYER \
     VIA \
+    REMAP \
     VIRTSER \
     WPM \
 

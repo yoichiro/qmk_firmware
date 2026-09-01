@@ -660,7 +660,6 @@ ifeq ($(strip $(REMAP_ENABLE)), yes)
     RAW_ENABLE := yes
     BOOTMAGIC_ENABLE := yes
     TRI_LAYER_ENABLE := yes
-    OPT_DEFS += -DREMAP_ENABLE
 endif
 
 ifeq ($(strip $(RAW_ENABLE)), yes)
