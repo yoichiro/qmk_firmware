@@ -652,6 +652,10 @@ ifeq ($(strip $(VIA_ENABLE)), yes)
     endif
 endif
 
+ifeq ($(strip $(REMAP_ENABLE)), yes)
+    OPT_DEFS += -DREMAP_ENABLE
+endif
+
 ifeq ($(strip $(RAW_ENABLE)), yes)
     OPT_DEFS += -DRAW_ENABLE
     SRC += raw_hid.c
