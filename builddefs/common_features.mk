@@ -653,6 +653,9 @@ ifeq ($(strip $(VIA_ENABLE)), yes)
 endif
 
 ifeq ($(strip $(REMAP_ENABLE)), yes)
+    ifeq ($(strip $(VIA_ENABLE)), yes)
+        $(call CATASTROPHIC_ERROR,Incompatible options,VIA_ENABLE and REMAP_ENABLE cannot be enabled at the same time)
+    endif
     OPT_DEFS += -DREMAP_ENABLE
 endif
 
