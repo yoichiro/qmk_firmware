@@ -105,6 +105,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef VIA_ENABLE
 #    include "via.h"
 #endif
+#ifdef REMAP_ENABLE
+#    include "remap.h"
+#endif
 #ifdef DIP_SWITCH_ENABLE
 #    include "dip_switch.h"
 #endif
@@ -465,6 +468,9 @@ void keyboard_init(void) {
     sync_timer_init();
 #ifdef VIA_ENABLE
     via_init();
+#endif
+#ifdef REMAP_ENABLE
+    remap_init();
 #endif
 #ifdef SPLIT_KEYBOARD
     split_pre_init();

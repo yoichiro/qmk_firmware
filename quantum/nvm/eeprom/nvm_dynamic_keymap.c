@@ -18,6 +18,10 @@
 #ifdef VIA_ENABLE
 #    include "via.h"
 #    define DYNAMIC_KEYMAP_EEPROM_START (VIA_EEPROM_CONFIG_END)
+#elif defined(REMAP_ENABLE)
+#    include "remap.h"
+#    include "nvm_eeprom_remap_internal.h"
+#    define DYNAMIC_KEYMAP_EEPROM_START (REMAP_EEPROM_CONFIG_END)
 #else
 #    define DYNAMIC_KEYMAP_EEPROM_START (EECONFIG_SIZE)
 #endif

@@ -356,6 +356,9 @@ bool process_record_quantum(keyrecord_t *record) {
 #if defined(VIA_ENABLE)
             process_record_via(keycode, record) &&
 #endif
+#if defined(REMAP_ENABLE)
+            process_record_remap(keycode, record) &&
+#endif
 #if defined(SECURE_ENABLE)
             process_secure(keycode, record) &&
 #endif
