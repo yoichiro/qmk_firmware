@@ -656,6 +656,10 @@ ifeq ($(strip $(REMAP_ENABLE)), yes)
     ifeq ($(strip $(VIA_ENABLE)), yes)
         $(call CATASTROPHIC_ERROR,Incompatible options,VIA_ENABLE and REMAP_ENABLE cannot be enabled at the same time)
     endif
+    DYNAMIC_KEYMAP_ENABLE := yes
+    RAW_ENABLE := yes
+    BOOTMAGIC_ENABLE := yes
+    TRI_LAYER_ENABLE := yes
     OPT_DEFS += -DREMAP_ENABLE
 endif
 
