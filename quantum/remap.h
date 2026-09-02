@@ -30,7 +30,9 @@ enum remap_command_id {
     id_remap_dynamic_keymap_get_buffer            = 0x92,
     id_remap_dynamic_keymap_get_encoder           = 0x94,
     id_remap_dynamic_keymap_set_encoder           = 0x95,
-    // 0x96-0xEF reserved for future Remap extensions.
+    id_remap_get_definition_size                  = 0x96,
+    id_remap_get_definition_chunk                 = 0x97,
+    // 0x98-0xEF reserved for future Remap extensions.
     id_remap_unhandled                            = 0xFF,
 };
 

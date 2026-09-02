@@ -44,6 +44,11 @@
 #    include "rgblight.h"
 #endif
 
+// Embedded Remap keyboard definition, generated at build time by
+// util/generate_remap_definition.py into .build/*/src/remap_definition.c.
+extern const uint32_t remap_definition_size;
+extern const uint8_t  remap_definition_bytes[];
+
 // Can be called in an overriding remap_init_kb() to test if keyboard level
 // code usage of EEPROM is invalid and use/save defaults.
 bool remap_eeprom_is_valid(void) {
@@ -337,6 +342,28 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
             break;
         }
 #endif
+        case id_remap_get_definition_size: {
+            command_data[0] = (remap_definition_size >> 24) & 0xFF;
+            command_data[1] = (remap_definition_size >> 16) & 0xFF;
+            command_data[2] = (remap_definition_size >> 8) & 0xFF;
+            command_data[3] = remap_definition_size & 0xFF;
+            break;
+        }
+        case id_remap_get_definition_chunk: {
+            uint16_t offset    = ((uint16_t)command_data[0] << 8) | (uint16_t)command_data[1];
+            uint8_t  requested = command_data[2];
+            // Layout: [id, off_hi, off_lo, size, ...data...] leaves 28 bytes for data.
+            if (requested > 28) {
+                requested = 28;
+            }
+            uint32_t remaining = (offset < remap_definition_size) ? (remap_definition_size - offset) : 0;
+            uint8_t  actual    = (requested < remaining) ? requested : (uint8_t)remaining;
+            command_data[2]    = actual;
+            for (uint8_t i = 0; i < actual; i++) {
+                command_data[3 + i] = remap_definition_bytes[offset + i];
+            }
+            break;
+        }
         default: {
             *command_id = id_remap_unhandled;
             break;

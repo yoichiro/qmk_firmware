@@ -660,7 +660,12 @@ ifeq ($(strip $(REMAP_ENABLE)), yes)
     RAW_ENABLE := yes
     BOOTMAGIC_ENABLE := yes
     TRI_LAYER_ENABLE := yes
+    SRC += $(INTERMEDIATE_OUTPUT)/src/remap_definition.c
 endif
+
+$(INTERMEDIATE_OUTPUT)/src/remap_definition.c: $(DD_CONFIG_FILES) $(TOP_DIR)/util/generate_remap_definition.py
+	@$(SILENT) || printf "$(MSG_GENERATING) $@" | $(AWK_CMD)
+	$(QMK_BIN) info -kb $(KEYBOARD) -f json | python3 $(TOP_DIR)/util/generate_remap_definition.py - --to-c-source -o $@
 
 ifeq ($(strip $(RAW_ENABLE)), yes)
     OPT_DEFS += -DRAW_ENABLE
